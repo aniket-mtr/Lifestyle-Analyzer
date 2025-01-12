@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifestyle Questionnaire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lifestyle Questionnaire</h1>
+        <form id="questionnaire-form" action="/submit" method="POST">
+            <!-- Core Circle -->
+            <div class="form-group">
+                <label for="core_circle">Core Circle of Friends(0-10):</label>
+                <input type="range" id="core_circle" name="core_circle" min="0" max="10" step="1" value="5" oninput="coreCircleValue.innerText = this.value">
+                <span id="coreCircleValue">5</span>
+            </div>
+            
+            <!-- BMI -->
+            <div class="form-group">
+                <label for="bmi">BMI (15-45):</label>
+                <input type="number" id="bmi" name="bmi" min="15" max="45" step="0.1" placeholder="Enter your BMI" required>
+            </div>
+            
+            <!-- Steps -->
+            <div class="form-group">
+                <label for="steps">Steps (0-10,000):</label>
+                <input type="number" id="steps" name="steps" min="0" max="10000" step="1" placeholder="Enter your daily steps" required>
+            </div>
+            
+            <!-- Sleep -->
+            <div class="form-group">
+                <label for="sleep">Sleep in hours(0-10):</label>
+                <input type="range" id="sleep" name="sleep" min="0" max="10" step="1" value="5" oninput="sleepValue.innerText = this.value">
+                <span id="sleepValue">5</span>
+            </div>
+            
+            <!-- Work-Life Balance (WLB) -->
+            <div class="form-group">
+                <label for="wlb">Work-Life Balance:
+                    <br>(0-3 for very poor)
+                    <br>(4-7 for moderare)
+                    <br>(8-10 for great)
+                </label>
+                <input type="range" id="wlb" name="wlb" min="0" max="10" step="1" value="5" oninput="wlbValue.innerText = this.value">
+                <span id="wlbValue">5</span>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

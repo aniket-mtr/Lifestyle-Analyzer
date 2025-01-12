@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .layout{
+            background-color: #001f3f;
+        }
+        .result-container {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 20px;
+            background: #D9CA99;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .result {
+            font-size: 1.5rem;
+            color: #a71b1b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="layout">
+    <div class="container result-container">
+        <h1>Prediction Result</h1>
+        <p class="result" id="prediction-result"></p>
+        <a href="/" class="submit-btn">Go Back</a>
+    </div>
+    <script>
+        // Display the prediction passed via query parameters
+        const params = new URLSearchParams(window.location.search);
+        const result = params.get('result');
+        document.getElementById('prediction-result').textContent = `${result}`;
+    </script>
+</body>
+</html>
