@@ -19,8 +19,8 @@ app.post('/submit', (req, res) => {
     const inputData = [core_circle, bmi, steps, sleep, wlb];
 
     // Run the Python script and pass the data
-    // const pythonProcess = spawn('C:\\ProgramData\\anaconda3\\python', ['./backend/predict.py', ...inputData]);
-    const pythonProcess = spawn('python3', ['./backend/predict.py', ...]);
+    const pythonProcess = spawn('C:\\ProgramData\\anaconda3\\python', ['./backend/predict.py', ...inputData]);
+    // const pythonProcess = spawn('python3', ['./backend/predict.py', ...]); for deploying this maybe used
 
     let predictionResult = '';
 
